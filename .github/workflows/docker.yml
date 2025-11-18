@@ -11,4 +11,5 @@ jobs:
         with:
           go-version: 'stable'
       - run: go install github.com/gohugoio/hugo@latest
-      - run: cd {{ github.workspace }} && hugo build
+      - uses: actions/checkout@v5
+      - run: cd ${GITHUB_WORKSPACE} && hugo build
