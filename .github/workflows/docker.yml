@@ -13,3 +13,14 @@ jobs:
       - run: go install github.com/gohugoio/hugo@latest
       - uses: actions/checkout@v5
       - run: cd ${GITHUB_WORKSPACE} && hugo build
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.PAT }}
+      - name: Build and push to GHCR
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          tags: ghcr.io/flipfloppy1/flipfloppys-blog:latest
