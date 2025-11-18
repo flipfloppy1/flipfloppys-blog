@@ -1,0 +1,14 @@
+name: Docker Container
+
+on:
+  push
+    
+jobs:
+  build:
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/setup-go@v6
+        with:
+          go-version: 'stable'
+      - run: go install github.com/gohugoio/hugo@latest
+      - run: hugo build

@@ -1,0 +1,37 @@
+baseURL = 'https://flipfloppy.net/'
+languageCode = 'en-us'
+title = "flipfloppy's blog"
+copyright = "2025 flipfloppy's blog"
+theme = 'diary'
+
+[markup.goldmark.renderer]
+unsafe = true
+
+# Generate sitemap in the public folder
+[sitemap]
+  changefreq = "always"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[params]
+subtitle = "tech things that interest me"
+
+[[menu.main]]
+url = "mailto:flipfloppy.business@gmail.com"
+name = "Email"
+weight = 4
+
+[[menu.main]]
+url = "https://youtube.com/@flipfloppy1"
+name = "YouTube"
+weight = 1
+
+[[menu.main]]
+url = "https://github.com/flipfloppy1"
+name = "GitHub"
+weight = 1
+
+[[menu.main]]
+url = "/index.xml"
+name = "RSS Feed"
+weight = 3
