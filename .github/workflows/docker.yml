@@ -11,4 +11,4 @@ jobs:
         with:
           go-version: 'stable'
       - run: go install github.com/gohugoio/hugo@latest
-      - run: hugo build
+      - run: cd {{ github.workspace }} && hugo build
